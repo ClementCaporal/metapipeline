@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "metapipeline"
+version = "0.1.0"
+description = "test multiple parameters for complexe pipeline"
+authors = ["ClementCaporal <caporal.clement@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+graphviz = "^0.19.1"
+psutil = "^5.9.0"
+
+[tool.poetry.dev-dependencies]
+mypi = "^0.0.3"
+pytest = "^7.1.1"
+coverage = "^6.3.2"
+mypy = "^0.941"
+wemake-python-styleguide = "^0.16.1"
+pylint = "^2.12.2"
+black = "^22.1.0"
+pre-commit = "^2.17.0"
+Sphinx = "^4.4.0"
+furo = "^2022.3.4"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
