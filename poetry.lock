@@ -7,22 +7,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "appdirs"
-version = "1.4.4"
-description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[[package]]
-name = "astor"
-version = "0.8.1"
-description = "Read/rewrite/write Python ASTs"
-category = "dev"
-optional = false
-python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-
-[[package]]
 name = "astroid"
 version = "2.9.3"
 description = "An abstract syntax tree for Python with inference support."
@@ -67,20 +51,6 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 
 [package.dependencies]
 pytz = ">=2015.7"
-
-[[package]]
-name = "bandit"
-version = "0.16.2"
-description = "Security oriented static analyser for python code."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-appdirs = ">=1.3.0"
-PyYAML = ">=3.1.0"
-six = ">=1.9.0"
-stevedore = ">=1.5.0"
 
 [[package]]
 name = "beautifulsoup4"
@@ -177,14 +147,6 @@ python-versions = ">=3.7"
 toml = ["tomli"]
 
 [[package]]
-name = "darglint"
-version = "1.8.1"
-description = "A utility for ensuring Google-style docstrings stay up to date with the source code."
-category = "dev"
-optional = false
-python-versions = ">=3.6,<4.0"
-
-[[package]]
 name = "distlib"
 version = "0.3.4"
 description = "Distribution utilities"
@@ -207,14 +169,6 @@ description = "Docutils -- Python Documentation Utilities"
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[[package]]
-name = "eradicate"
-version = "2.0.0"
-description = "Removes commented-out code."
-category = "dev"
-optional = false
-python-versions = "*"
 
 [[package]]
 name = "filelock"
@@ -240,168 +194,6 @@ python-versions = ">=3.6"
 mccabe = ">=0.6.0,<0.7.0"
 pycodestyle = ">=2.8.0,<2.9.0"
 pyflakes = ">=2.4.0,<2.5.0"
-
-[[package]]
-name = "flake8-bandit"
-version = "2.1.2"
-description = "Automated security testing with bandit and flake8."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-bandit = "*"
-flake8 = "*"
-flake8-polyfill = "*"
-pycodestyle = "*"
-
-[[package]]
-name = "flake8-broken-line"
-version = "0.4.0"
-description = "Flake8 plugin to forbid backslashes for line breaks"
-category = "dev"
-optional = false
-python-versions = ">=3.6,<4.0"
-
-[package.dependencies]
-flake8 = ">=3.5,<5"
-
-[[package]]
-name = "flake8-bugbear"
-version = "22.3.20"
-description = "A plugin for flake8 finding likely bugs and design problems in your program. Contains warnings that don't belong in pyflakes and pycodestyle."
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-attrs = ">=19.2.0"
-flake8 = ">=3.0.0"
-
-[package.extras]
-dev = ["coverage", "hypothesis", "hypothesmith (>=0.2)", "pre-commit"]
-
-[[package]]
-name = "flake8-commas"
-version = "2.1.0"
-description = "Flake8 lint for trailing commas."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-flake8 = ">=2"
-
-[[package]]
-name = "flake8-comprehensions"
-version = "3.8.0"
-description = "A flake8 plugin to help you write better list/set/dict comprehensions."
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-flake8 = ">=3.0,<3.2.0 || >3.2.0"
-
-[[package]]
-name = "flake8-debugger"
-version = "4.0.0"
-description = "ipdb/pdb statement checker plugin for flake8"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-flake8 = ">=3.0"
-pycodestyle = "*"
-six = "*"
-
-[[package]]
-name = "flake8-docstrings"
-version = "1.6.0"
-description = "Extension for flake8 which uses pydocstyle to check docstrings"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-flake8 = ">=3"
-pydocstyle = ">=2.1"
-
-[[package]]
-name = "flake8-eradicate"
-version = "1.2.0"
-description = "Flake8 plugin to find commented out code"
-category = "dev"
-optional = false
-python-versions = ">=3.6,<4.0"
-
-[package.dependencies]
-attrs = "*"
-eradicate = ">=2.0,<3.0"
-flake8 = ">=3.5,<5"
-
-[[package]]
-name = "flake8-isort"
-version = "4.1.1"
-description = "flake8 plugin that integrates isort ."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-flake8 = ">=3.2.1,<5"
-isort = ">=4.3.5,<6"
-testfixtures = ">=6.8.0,<7"
-
-[package.extras]
-test = ["pytest-cov"]
-
-[[package]]
-name = "flake8-polyfill"
-version = "1.0.2"
-description = "Polyfill package for Flake8 plugins"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-flake8 = "*"
-
-[[package]]
-name = "flake8-quotes"
-version = "3.3.1"
-description = "Flake8 lint for quotes."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-flake8 = "*"
-
-[[package]]
-name = "flake8-rst-docstrings"
-version = "0.2.5"
-description = "Python docstring reStructuredText (RST) validator"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-flake8 = ">=3.0.0"
-pygments = "*"
-restructuredtext-lint = "*"
-
-[[package]]
-name = "flake8-string-format"
-version = "0.3.0"
-description = "string format checker, plugin for flake8"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-flake8 = "*"
 
 [[package]]
 name = "flask"
@@ -643,26 +435,6 @@ optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 
 [[package]]
-name = "pbr"
-version = "5.8.1"
-description = "Python Build Reasonableness"
-category = "dev"
-optional = false
-python-versions = ">=2.6"
-
-[[package]]
-name = "pep8-naming"
-version = "0.12.1"
-description = "Check PEP-8 naming conventions, plugin for flake8"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-flake8 = ">=3.9.1"
-flake8-polyfill = ">=1.0.2,<2"
-
-[[package]]
 name = "platformdirs"
 version = "2.5.1"
 description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
@@ -728,20 +500,6 @@ description = "Python style guide checker"
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[[package]]
-name = "pydocstyle"
-version = "6.1.1"
-description = "Python docstring style checker"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-snowballstemmer = "*"
-
-[package.extras]
-toml = ["toml"]
 
 [[package]]
 name = "pyflakes"
@@ -841,17 +599,6 @@ urllib3 = ">=1.21.1,<1.27"
 [package.extras]
 socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<5)"]
-
-[[package]]
-name = "restructuredtext-lint"
-version = "1.4.0"
-description = "reStructuredText linter"
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.dependencies]
-docutils = ">=0.11,<1.0"
 
 [[package]]
 name = "semantic-version"
@@ -997,30 +744,6 @@ lint = ["flake8", "mypy", "docutils-stubs"]
 test = ["pytest"]
 
 [[package]]
-name = "stevedore"
-version = "3.5.0"
-description = "Manage dynamic plugins for Python applications"
-category = "dev"
-optional = false
-python-versions = ">=3.6"
-
-[package.dependencies]
-pbr = ">=2.0.0,<2.1.0 || >2.1.0"
-
-[[package]]
-name = "testfixtures"
-version = "6.18.5"
-description = "A collection of helpers and mock objects for unit tests and doc tests."
-category = "dev"
-optional = false
-python-versions = "*"
-
-[package.extras]
-build = ["setuptools-git", "wheel", "twine"]
-docs = ["sphinx", "zope.component", "sybil", "twisted", "mock", "django (<2)", "django"]
-test = ["pytest (>=3.6)", "pytest-cov", "pytest-django", "zope.component", "sybil", "twisted", "mock", "django (<2)", "django"]
-
-[[package]]
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
@@ -1076,35 +799,6 @@ docs = ["proselint (>=0.10.2)", "sphinx (>=3)", "sphinx-argparse (>=0.2.5)", "sp
 testing = ["coverage (>=4)", "coverage-enable-subprocess (>=1)", "flaky (>=3)", "pytest (>=4)", "pytest-env (>=0.6.2)", "pytest-freezegun (>=0.4.1)", "pytest-mock (>=2)", "pytest-randomly (>=1)", "pytest-timeout (>=1)", "packaging (>=20.0)"]
 
 [[package]]
-name = "wemake-python-styleguide"
-version = "0.16.1"
-description = "The strictest and most opinionated python linter ever"
-category = "dev"
-optional = false
-python-versions = ">=3.6,<4.0"
-
-[package.dependencies]
-astor = ">=0.8,<0.9"
-attrs = "*"
-darglint = ">=1.2,<2.0"
-flake8 = ">=3.7,<5"
-flake8-bandit = ">=2.1,<4"
-flake8-broken-line = ">=0.3,<0.5"
-flake8-bugbear = ">=20.1,<23.0"
-flake8-commas = ">=2.0,<3.0"
-flake8-comprehensions = ">=3.1,<4.0"
-flake8-debugger = ">=4.0,<5.0"
-flake8-docstrings = ">=1.3,<2.0"
-flake8-eradicate = ">=1.0,<2.0"
-flake8-isort = ">=4.0,<5.0"
-flake8-quotes = ">=3.0,<4.0"
-flake8-rst-docstrings = ">=0.2,<0.3"
-flake8-string-format = ">=0.3,<0.4"
-pep8-naming = ">=0.11,<0.13"
-pygments = ">=2.4,<3.0"
-typing_extensions = ">=3.6,<5.0"
-
-[[package]]
 name = "werkzeug"
 version = "2.0.3"
 description = "The comprehensive WSGI web application library."
@@ -1138,20 +832,12 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "a6e974d8bc4f023379a8a06127b7e5246b51bd6a00bcaa2622828ecb00e35291"
+content-hash = "169f3103c9c6bbcc50e62706ac1d2fdba0697ba4f3375784ae85593d60bfa0e9"
 
 [metadata.files]
 alabaster = [
     {file = "alabaster-0.7.12-py2.py3-none-any.whl", hash = "sha256:446438bdcca0e05bd45ea2de1668c1d9b032e1a9154c2c259092d77031ddd359"},
     {file = "alabaster-0.7.12.tar.gz", hash = "sha256:a661d72d58e6ea8a57f7a86e37d86716863ee5e92788398526d58b26a4e4dc02"},
-]
-appdirs = [
-    {file = "appdirs-1.4.4-py2.py3-none-any.whl", hash = "sha256:a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"},
-    {file = "appdirs-1.4.4.tar.gz", hash = "sha256:7d5d0167b2b1ba821647616af46a749d1c653740dd0d2415100fe26e27afdf41"},
-]
-astor = [
-    {file = "astor-0.8.1-py2.py3-none-any.whl", hash = "sha256:070a54e890cefb5b3739d19f30f5a5ec840ffc9c50ffa7d23cc9fc1a38ebbfc5"},
-    {file = "astor-0.8.1.tar.gz", hash = "sha256:6a6effda93f4e1ce9f618779b2dd1d9d84f1e32812c23a29b3fff6fd7f63fa5e"},
 ]
 astroid = [
     {file = "astroid-2.9.3-py3-none-any.whl", hash = "sha256:506daabe5edffb7e696ad82483ad0228245a9742ed7d2d8c9cdb31537decf9f6"},
@@ -1168,10 +854,6 @@ attrs = [
 babel = [
     {file = "Babel-2.9.1-py2.py3-none-any.whl", hash = "sha256:ab49e12b91d937cd11f0b67cb259a57ab4ad2b59ac7a3b41d6c06c0ac5b0def9"},
     {file = "Babel-2.9.1.tar.gz", hash = "sha256:bc0c176f9f6a994582230df350aa6e05ba2ebe4b3ac317eab29d9be5d2768da0"},
-]
-bandit = [
-    {file = "bandit-0.16.2-py2.py3-none-any.whl", hash = "sha256:59bbaf9c069e765ede161da7ae93b76465b8845001afe1b87b6db14b2ed5268c"},
-    {file = "bandit-0.16.2.tar.gz", hash = "sha256:9b8ff2812a40df04aaee4d38e41b5aa8ee3f92b3ead86c5f7ae462eb37485dc3"},
 ]
 beautifulsoup4 = [
     {file = "beautifulsoup4-4.10.0-py3-none-any.whl", hash = "sha256:9a315ce70049920ea4572a4055bc4bd700c940521d36fc858205ad4fcde149bf"},
@@ -1265,10 +947,6 @@ coverage = [
     {file = "coverage-6.3.2-pp36.pp37.pp38-none-any.whl", hash = "sha256:18d520c6860515a771708937d2f78f63cc47ab3b80cb78e86573b0a760161faf"},
     {file = "coverage-6.3.2.tar.gz", hash = "sha256:03e2a7826086b91ef345ff18742ee9fc47a6839ccd517061ef8fa1976e652ce9"},
 ]
-darglint = [
-    {file = "darglint-1.8.1-py3-none-any.whl", hash = "sha256:5ae11c259c17b0701618a20c3da343a3eb98b3bc4b5a83d31cdd94f5ebdced8d"},
-    {file = "darglint-1.8.1.tar.gz", hash = "sha256:080d5106df149b199822e7ee7deb9c012b49891538f14a11be681044f0bb20da"},
-]
 distlib = [
     {file = "distlib-0.3.4-py2.py3-none-any.whl", hash = "sha256:6564fe0a8f51e734df6333d08b8b94d4ea8ee6b99b5ed50613f731fd4089f34b"},
     {file = "distlib-0.3.4.zip", hash = "sha256:e4b58818180336dc9c529bfb9a0b58728ffc09ad92027a3f30b7cd91e3458579"},
@@ -1280,9 +958,6 @@ docutils = [
     {file = "docutils-0.17.1-py2.py3-none-any.whl", hash = "sha256:cf316c8370a737a022b72b56874f6602acf974a37a9fba42ec2876387549fc61"},
     {file = "docutils-0.17.1.tar.gz", hash = "sha256:686577d2e4c32380bb50cbb22f575ed742d58168cee37e99117a854bcd88f125"},
 ]
-eradicate = [
-    {file = "eradicate-2.0.0.tar.gz", hash = "sha256:27434596f2c5314cc9b31410c93d8f7e8885747399773cd088d3adea647a60c8"},
-]
 filelock = [
     {file = "filelock-3.6.0-py3-none-any.whl", hash = "sha256:f8314284bfffbdcfa0ff3d7992b023d4c628ced6feb957351d4c48d059f56bc0"},
     {file = "filelock-3.6.0.tar.gz", hash = "sha256:9cd540a9352e432c7246a48fe4e8712b10acb1df2ad1f30e8c070b82ae1fed85"},
@@ -1290,56 +965,6 @@ filelock = [
 flake8 = [
     {file = "flake8-4.0.1-py2.py3-none-any.whl", hash = "sha256:479b1304f72536a55948cb40a32dce8bb0ffe3501e26eaf292c7e60eb5e0428d"},
     {file = "flake8-4.0.1.tar.gz", hash = "sha256:806e034dda44114815e23c16ef92f95c91e4c71100ff52813adf7132a6ad870d"},
-]
-flake8-bandit = [
-    {file = "flake8_bandit-2.1.2.tar.gz", hash = "sha256:687fc8da2e4a239b206af2e54a90093572a60d0954f3054e23690739b0b0de3b"},
-]
-flake8-broken-line = [
-    {file = "flake8-broken-line-0.4.0.tar.gz", hash = "sha256:771aab5aa0997666796fed249d0e48e6c01cdfeca8c95521eea28a38b7ced4c7"},
-    {file = "flake8_broken_line-0.4.0-py3-none-any.whl", hash = "sha256:e9c522856862239a2c7ef2c1de0276fa598572aa864bd4e9c7efc2a827538515"},
-]
-flake8-bugbear = [
-    {file = "flake8-bugbear-22.3.20.tar.gz", hash = "sha256:152e64a86f6bff6e295d630ccc993f62434c1fd2b20d2fae47547cb1c1b868e0"},
-    {file = "flake8_bugbear-22.3.20-py3-none-any.whl", hash = "sha256:19fe179ee3286e16198603c438788e2949e79f31d653f0bdb56d53fb69217bd0"},
-]
-flake8-commas = [
-    {file = "flake8-commas-2.1.0.tar.gz", hash = "sha256:940441ab8ee544df564ae3b3f49f20462d75d5c7cac2463e0b27436e2050f263"},
-    {file = "flake8_commas-2.1.0-py2.py3-none-any.whl", hash = "sha256:ebb96c31e01d0ef1d0685a21f3f0e2f8153a0381430e748bf0bbbb5d5b453d54"},
-]
-flake8-comprehensions = [
-    {file = "flake8-comprehensions-3.8.0.tar.gz", hash = "sha256:8e108707637b1d13734f38e03435984f6b7854fa6b5a4e34f93e69534be8e521"},
-    {file = "flake8_comprehensions-3.8.0-py3-none-any.whl", hash = "sha256:9406314803abe1193c064544ab14fdc43c58424c0882f6ff8a581eb73fc9bb58"},
-]
-flake8-debugger = [
-    {file = "flake8-debugger-4.0.0.tar.gz", hash = "sha256:e43dc777f7db1481db473210101ec2df2bd39a45b149d7218a618e954177eda6"},
-    {file = "flake8_debugger-4.0.0-py3-none-any.whl", hash = "sha256:82e64faa72e18d1bdd0000407502ebb8ecffa7bc027c62b9d4110ce27c091032"},
-]
-flake8-docstrings = [
-    {file = "flake8-docstrings-1.6.0.tar.gz", hash = "sha256:9fe7c6a306064af8e62a055c2f61e9eb1da55f84bb39caef2b84ce53708ac34b"},
-    {file = "flake8_docstrings-1.6.0-py2.py3-none-any.whl", hash = "sha256:99cac583d6c7e32dd28bbfbef120a7c0d1b6dde4adb5a9fd441c4227a6534bde"},
-]
-flake8-eradicate = [
-    {file = "flake8-eradicate-1.2.0.tar.gz", hash = "sha256:acaa1b6839ff00d284b805c432fdfa6047262bd15a5504ec945797e87b4de1fa"},
-    {file = "flake8_eradicate-1.2.0-py3-none-any.whl", hash = "sha256:51dc660d0c1c1ed93af0f813540bbbf72ab2d3466c14e3f3bac371c618b6042f"},
-]
-flake8-isort = [
-    {file = "flake8-isort-4.1.1.tar.gz", hash = "sha256:d814304ab70e6e58859bc5c3e221e2e6e71c958e7005239202fee19c24f82717"},
-    {file = "flake8_isort-4.1.1-py3-none-any.whl", hash = "sha256:c4e8b6dcb7be9b71a02e6e5d4196cefcef0f3447be51e82730fb336fff164949"},
-]
-flake8-polyfill = [
-    {file = "flake8-polyfill-1.0.2.tar.gz", hash = "sha256:e44b087597f6da52ec6393a709e7108b2905317d0c0b744cdca6208e670d8eda"},
-    {file = "flake8_polyfill-1.0.2-py2.py3-none-any.whl", hash = "sha256:12be6a34ee3ab795b19ca73505e7b55826d5f6ad7230d31b18e106400169b9e9"},
-]
-flake8-quotes = [
-    {file = "flake8-quotes-3.3.1.tar.gz", hash = "sha256:633adca6fb8a08131536af0d750b44d6985b9aba46f498871e21588c3e6f525a"},
-]
-flake8-rst-docstrings = [
-    {file = "flake8-rst-docstrings-0.2.5.tar.gz", hash = "sha256:4fe93f997dea45d9d3c8bd220f12f0b6c359948fb943b5b48021a3f927edd816"},
-    {file = "flake8_rst_docstrings-0.2.5-py3-none-any.whl", hash = "sha256:b99d9041b769b857efe45a448dc8c71b1bb311f9cacbdac5de82f96498105082"},
-]
-flake8-string-format = [
-    {file = "flake8-string-format-0.3.0.tar.gz", hash = "sha256:65f3da786a1461ef77fca3780b314edb2853c377f2e35069723348c8917deaa2"},
-    {file = "flake8_string_format-0.3.0-py2.py3-none-any.whl", hash = "sha256:812ff431f10576a74c89be4e85b8e075a705be39bc40c4b4278b5b13e2afa9af"},
 ]
 flask = [
     {file = "Flask-0.10.1.tar.gz", hash = "sha256:4c83829ff83d408b5e1d4995472265411d2c414112298f2eb4b359d9e4563373"},
@@ -1520,14 +1145,6 @@ pathspec = [
     {file = "pathspec-0.9.0-py2.py3-none-any.whl", hash = "sha256:7d15c4ddb0b5c802d161efc417ec1a2558ea2653c2e8ad9c19098201dc1c993a"},
     {file = "pathspec-0.9.0.tar.gz", hash = "sha256:e564499435a2673d586f6b2130bb5b95f04a3ba06f81b8f895b651a3c76aabb1"},
 ]
-pbr = [
-    {file = "pbr-5.8.1-py2.py3-none-any.whl", hash = "sha256:27108648368782d07bbf1cb468ad2e2eeef29086affd14087a6d04b7de8af4ec"},
-    {file = "pbr-5.8.1.tar.gz", hash = "sha256:66bc5a34912f408bb3925bf21231cb6f59206267b7f63f3503ef865c1a292e25"},
-]
-pep8-naming = [
-    {file = "pep8-naming-0.12.1.tar.gz", hash = "sha256:bb2455947757d162aa4cad55dba4ce029005cd1692f2899a21d51d8630ca7841"},
-    {file = "pep8_naming-0.12.1-py2.py3-none-any.whl", hash = "sha256:4a8daeaeb33cfcde779309fc0c9c0a68a3bbe2ad8a8308b763c5068f86eb9f37"},
-]
 platformdirs = [
     {file = "platformdirs-2.5.1-py3-none-any.whl", hash = "sha256:bcae7cab893c2d310a711b70b24efb93334febe65f8de776ee320b517471e227"},
     {file = "platformdirs-2.5.1.tar.gz", hash = "sha256:7535e70dfa32e84d4b34996ea99c5e432fa29a708d0f4e394bbcb2a8faa4f16d"},
@@ -1581,10 +1198,6 @@ py = [
 pycodestyle = [
     {file = "pycodestyle-2.8.0-py2.py3-none-any.whl", hash = "sha256:720f8b39dde8b293825e7ff02c475f3077124006db4f440dcbc9a20b76548a20"},
     {file = "pycodestyle-2.8.0.tar.gz", hash = "sha256:eddd5847ef438ea1c7870ca7eb78a9d47ce0cdb4851a5523949f2601d0cbbe7f"},
-]
-pydocstyle = [
-    {file = "pydocstyle-6.1.1-py3-none-any.whl", hash = "sha256:6987826d6775056839940041beef5c08cc7e3d71d63149b48e36727f70144dc4"},
-    {file = "pydocstyle-6.1.1.tar.gz", hash = "sha256:1d41b7c459ba0ee6c345f2eb9ae827cab14a7533a88c5c6f7e94923f72df92dc"},
 ]
 pyflakes = [
     {file = "pyflakes-2.4.0-py2.py3-none-any.whl", hash = "sha256:3bb3a3f256f4b7968c9c788781e4ff07dce46bdf12339dcda61053375426ee2e"},
@@ -1649,9 +1262,6 @@ requests = [
     {file = "requests-2.27.1-py2.py3-none-any.whl", hash = "sha256:f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"},
     {file = "requests-2.27.1.tar.gz", hash = "sha256:68d7c56fd5a8999887728ef304a6d12edc7be74f1cfa47714fc8b414525c9a61"},
 ]
-restructuredtext-lint = [
-    {file = "restructuredtext_lint-1.4.0.tar.gz", hash = "sha256:1b235c0c922341ab6c530390892eb9e92f90b9b75046063e047cacfb0f050c45"},
-]
 semantic-version = [
     {file = "semantic_version-2.3.0.tar.gz", hash = "sha256:19723ccc0d7ac93fa5af5ce680e0ad0781350d3e17480da9655817bd52ce937c"},
 ]
@@ -1699,14 +1309,6 @@ sphinxcontrib-serializinghtml = [
     {file = "sphinxcontrib-serializinghtml-1.1.5.tar.gz", hash = "sha256:aa5f6de5dfdf809ef505c4895e51ef5c9eac17d0f287933eb49ec495280b6952"},
     {file = "sphinxcontrib_serializinghtml-1.1.5-py2.py3-none-any.whl", hash = "sha256:352a9a00ae864471d3a7ead8d7d79f5fc0b57e8b3f95e9867eb9eb28999b92fd"},
 ]
-stevedore = [
-    {file = "stevedore-3.5.0-py3-none-any.whl", hash = "sha256:a547de73308fd7e90075bb4d301405bebf705292fa90a90fc3bcf9133f58616c"},
-    {file = "stevedore-3.5.0.tar.gz", hash = "sha256:f40253887d8712eaa2bb0ea3830374416736dc8ec0e22f5a65092c1174c44335"},
-]
-testfixtures = [
-    {file = "testfixtures-6.18.5-py2.py3-none-any.whl", hash = "sha256:7de200e24f50a4a5d6da7019fb1197aaf5abd475efb2ec2422fdcf2f2eb98c1d"},
-    {file = "testfixtures-6.18.5.tar.gz", hash = "sha256:02dae883f567f5b70fd3ad3c9eefb95912e78ac90be6c7444b5e2f46bf572c84"},
-]
 toml = [
     {file = "toml-0.10.2-py2.py3-none-any.whl", hash = "sha256:806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"},
     {file = "toml-0.10.2.tar.gz", hash = "sha256:b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f"},
@@ -1726,10 +1328,6 @@ urllib3 = [
 virtualenv = [
     {file = "virtualenv-20.13.4-py2.py3-none-any.whl", hash = "sha256:c3e01300fb8495bc00ed70741f5271fc95fed067eb7106297be73d30879af60c"},
     {file = "virtualenv-20.13.4.tar.gz", hash = "sha256:ce8901d3bbf3b90393498187f2d56797a8a452fb2d0d7efc6fd837554d6f679c"},
-]
-wemake-python-styleguide = [
-    {file = "wemake-python-styleguide-0.16.1.tar.gz", hash = "sha256:4fcd78dd55732679b5fc8bc37fd7e04bbaa5cdc1b1a829ad265e8f6b0d853cf6"},
-    {file = "wemake_python_styleguide-0.16.1-py3-none-any.whl", hash = "sha256:202c22ecfee1f5caf0555048602cd52f2435cd57903e6b0cd46b5aaa3f652140"},
 ]
 werkzeug = [
     {file = "Werkzeug-2.0.3-py3-none-any.whl", hash = "sha256:1421ebfc7648a39a5c58c601b154165d05cf47a3cd0ccb70857cbdacf6c8f2b8"},
