@@ -132,6 +132,15 @@ class StepInterface(metaclass=ABCMeta):
         base[self.name] = params
         return base
 
+    def get_scenario_inputs(self, scenario):
+        explicit_inputs = [
+            self.explicit_inputs[param][self.scenarios[scenario][i]]
+            for i, param in enumerate(self.explicit_inputs)
+            ]
+        params_dict = dict(zip(self.explicit_inputs.keys(),
+                               explicit_inputs))
+        return params_dict
+
 
 class Step(StepInterface):
 
