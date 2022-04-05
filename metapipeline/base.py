@@ -14,7 +14,7 @@ class StepInterface(metaclass=ABCMeta):
 
     def __init__(self,
                  name: Optional[str] = None,
-                 **inputs,
+                 inputs: Dict = {},
                  ) -> None:
         if name is None:
             name = type(self).__name__
