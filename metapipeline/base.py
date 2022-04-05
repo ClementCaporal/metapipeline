@@ -164,6 +164,6 @@ class DaskStep(Step):
 class ExampleStep(Step):
 
     def run_scenario(self, scenario):
-        explicit_inputs = [self.explicit_inputs[params][scenario[i]]
-                           for i, params in enumerate(self.explicit_inputs)]
-        return explicit_inputs
+        params_dict = self.get_scenario_inputs(scenario)
+        return params_dict
+
