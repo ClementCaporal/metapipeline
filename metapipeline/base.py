@@ -14,11 +14,13 @@ class StepInterface(metaclass=ABCMeta):
 
     def __init__(self,
                  name: Optional[str] = None,
-                 inputs: Dict = {},
+                 inputs: Optional[Dict] = None,
                  ) -> None:
         if name is None:
             name = type(self).__name__
         self.name = name
+        if inputs is None:
+            inputs = {}
         self.inputs = inputs
 
     @property
@@ -38,7 +40,7 @@ class StepInterface(metaclass=ABCMeta):
 
     @property
     def outputs(self) -> Sequence:
-        if ~hasattr(self, "_outputs"):
+        if not hasattr(self, "_outputs"):
             self.execute()
         return self._outputs
 
@@ -101,7 +103,7 @@ class StepInterface(metaclass=ABCMeta):
         self.outputs = outputs
 
     def get_explicit_scenario(self,
-                              nb: Optional[int] = None):
+                              scenario_nb: Optional[int] = None):
         explicit_scenario = []
         for scenario in self.scenarios:
             base = {}
@@ -113,9 +115,9 @@ class StepInterface(metaclass=ABCMeta):
                     val = scenario[i]
                 base[f'{self.name}_{key}'] = val
             explicit_scenario.append(base)
-        if nb is None:
+        if scenario_nb is None:
             return explicit_scenario
-        return explicit_scenario[nb]
+        return explicit_scenario[scenario_nb]
 
     def recursive_step_parameters(self,
                                   base=None):
