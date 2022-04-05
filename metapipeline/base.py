@@ -1,7 +1,7 @@
 "Base class"
 from abc import ABCMeta, abstractmethod
 from itertools import product
-from typing import Dict, Optional, Sequence, Tuple
+from typing import Callable, Dict, Optional, Sequence, Tuple
 
 
 class ListParam(list):
@@ -98,7 +98,7 @@ class StepInterface(metaclass=ABCMeta):
 
     def execute(self):
         outputs = []
-        for scenario in self.scenarios:
+        for scenario in range(len(self.scenarios)):
             outputs.append(self.run_scenario(scenario))
         self.outputs = outputs
 
@@ -154,7 +154,7 @@ class DaskStep(Step):
 
     @property
     def lazy(self) -> bool:
-        if ~hasattr(self, "_lazy"):
+        if not hasattr(self, "_lazy"):
             self.execute()
         return self._lazy
 
@@ -176,3 +176,25 @@ class ExampleStep(Step):
         params_dict = self.get_scenario_inputs(scenario)
         return params_dict
 
+
+class FunctionStep(StepInterface):
+
+    def __init__(self,
+                 name: Optional[str] = None,
+                 function: Callable = NotImplementedError,
+                 inputs: Dict = None,
+                 ) -> None:
+        super().__init__(name, inputs)
+        self.function = function
+
+    @property
+    def function(self) -> Callable:
+        return self._function
+
+    @function.setter
+    def function(self, val: Callable):
+        self._function = val
+
+    def run_scenario(self, scenario):
+        params_dict = self.get_scenario_inputs(scenario)
+        return self.function(**params_dict)
