@@ -142,34 +142,6 @@ class StepInterface(metaclass=ABCMeta):
         return params_dict
 
 
-class Step(StepInterface):
-
-    def run_scenario(self, scenario):
-        raise NotImplementedError(
-            f'run_scenario is not implemented for {self}'
-            )
-
-
-class DaskStep(Step):
-
-    @property
-    def lazy(self) -> bool:
-        if not hasattr(self, "_lazy"):
-            self.execute()
-        return self._lazy
-
-    @lazy.setter
-    def lazy(self, val: bool):
-        self._lazy = val
-
-    def __init__(self,
-                 name: Optional[str] = None,
-                 lazy=True,
-                 **inputs) -> None:
-        super().__init__(name, **inputs)
-        self.lazy = lazy
-
-
 class ExampleStep(Step):
 
     def run_scenario(self, scenario):
