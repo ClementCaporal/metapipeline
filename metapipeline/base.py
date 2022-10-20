@@ -18,6 +18,7 @@ class ListParam(list):
         List of element corresponding to the same parameter
         with different values.
     """
+
     def __init__(self, *args) -> None:
         super().__init__(args[0])
 
