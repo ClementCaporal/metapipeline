@@ -1,7 +1,9 @@
 "Base class"
+import __future__
+
 from abc import ABCMeta, abstractmethod
 from itertools import product
-from typing import Any, Callable, Dict, Optional, Sequence, Tuple
+from typing import Any, Callable, Dict, Optional, Sequence, Tuple, Union
 
 
 class ListParam(list):
@@ -16,7 +18,7 @@ class ListParam(list):
         List of element corresponding to the same parameter
         with different values.
     """
-    def __init__(self, *args):
+    def __init__(self, *args) -> None:
         super().__init__(args[0])
 
 
@@ -110,6 +112,14 @@ class StepInterface(metaclass=ABCMeta):
         self._scenarios = val
 
     def create_step_scenarios(self):
+        """
+        create_step_scenario will create the a list of all the possible
+        scenarios with their variables values.
+
+        Returns
+        -------
+        None
+        """
         scenarios = (range(len(self.explicit_inputs[key]))
                      for key, _ in self.explicit_inputs.items())
         self.scenarios = list(product(*scenarios))
@@ -136,7 +146,7 @@ class StepInterface(metaclass=ABCMeta):
     def explicit_inputs(self, val: Dict[str, ListParam]):
         self._explicit_inputs = val
 
-    def create_explicit_inputs(self):
+    def create_explicit_inputs(self) -> None:
         """
         create_explicit_inputs
 
@@ -156,14 +166,38 @@ class StepInterface(metaclass=ABCMeta):
     def run_scenario(self, scenario):
         pass
 
-    def execute(self):
+    def execute(self) -> None:
+        """
+        execute
+
+        Compute all the outputs depending on the scenarios
+        """
         outputs = []
         for scenario in range(len(self.scenarios)):
             outputs.append(self.run_scenario(scenario))
-        self.outputs = outputs
+        self.outputs = ListParam(outputs)
 
-    def get_explicit_scenario(self,
-                              scenario_nb: Optional[int] = None):
+    def get_explicit_scenario(
+            self,
+            scenario_nb: Optional[int] = None
+        ) -> Union[
+                Sequence[Dict[str, Any]],
+                Dict[str, Any]]:
+        """
+        get_explicit_scenario
+
+        return the pipeline step and their params for a given scenario number
+
+        Parameters
+        ----------
+        scenario_nb : Optional[int], optional
+            number of the scenario to get, by default None.
+            If None, return a list of all scenario and their parameters id
+
+        Returns
+        -------
+        Union[ Sequence[Dict[str, Any]], Dict[str, Any]]
+        """
         explicit_scenario = []
         for scenario in self.scenarios:
             base = {}
@@ -209,7 +243,7 @@ class StepInterface(metaclass=ABCMeta):
         base[self.name] = params
         return base
 
-    def get_scenario_inputs(self, scenario):
+    def get_scenario_inputs(self, scenario) -> Dict[str, Any]:
         """
         get_scenario_inputs
 
@@ -241,7 +275,7 @@ class ExampleStep(StepInterface):
     example of step that you can implement using the
     StepInterface object
     """
-    def run_scenario(self, scenario):
+    def run_scenario(self, scenario) -> dict:
         params_dict = self.get_scenario_inputs(scenario)
         return params_dict
 
